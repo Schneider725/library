@@ -14,6 +14,8 @@ addBook.addEventListener("click", () => {
 close.addEventListener("click", () => {
     modal.close();
 });
+
+submit.addEventListener("click", toLibrary);
 submit.addEventListener("click", submitBook);
 
 removeBook.addEventListener("click", deleteBook);
@@ -24,15 +26,20 @@ function submitBook() {
     const pOne = document.createElement("p");
     const pTwo = document.createElement("p");
     const pThree = document.createElement("p");
+    const check = document.createElement("input")
     const remove = document.createElement("button");
 
-    remove.setAttribute("id","remove");
+    check.setAttribute("type", "checkbox");
+    check.textContent = "read?";
+
+    remove.setAttribute("id", "remove");
     remove.textContent = "remove book";
     remove.addEventListener("click", removeEntry);
 
     pOne.innerHTML = author.value;
     pTwo.innerHTML = title.value;
     pThree.innerHTML = pages.value
+    newDiv.appendChild(check);
     newDiv.appendChild(pOne);
     newDiv.appendChild(pTwo);
     newDiv.appendChild(pThree);
@@ -47,10 +54,30 @@ function submitBook() {
 
 function deleteBook() {
     const toDelete = books.lastElementChild;
+    if (myLibrary.length > 0) {
+        myLibrary.splice(myLibrary.length - 1, 1);
+    }
     toDelete.remove();
 }
 
 function removeEntry() {
     const toDelete = this.parentElement;
+    const index = Array.from(books.children).indexOf(toDelete);
+    if (index > -1) {
+        myLibrary.splice(index, 1);
+    }
     toDelete.remove();
+}
+
+const myLibrary = [];
+
+function Book(author, title, pages) {
+    this.author = author;
+    this.title = title;
+    this.pages = pages;
+}
+
+function toLibrary() {
+    const book1 = new Book(author.value, title.value, pages.value);
+    myLibrary.push(book1);
 }
