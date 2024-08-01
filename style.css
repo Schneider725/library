@@ -29,7 +29,9 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   margin: 0;
+  padding: 20px;
   font-family: 'Courier New', Courier, monospace;
+  background-color: #cbd5e1;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -79,7 +81,7 @@ form {
     flex-direction: column;
 }
 #books {
-    height: 100vh;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -87,7 +89,7 @@ form {
 }
 #books > * {
     text-align: center;
-    background-color: rgb(184, 136, 31);
+    background-color: #1e293b;
     border-radius: 10px;
     font-size: large;
     justify-content: center;
@@ -96,4 +98,31 @@ form {
 .buttons {
     display: flex;
     justify-content: space-around;
+}
+h1 {
+    margin-bottom: 50px;
+    color: #334155;
+    text-align: center;
+}
+button {
+    background-color: #334155;
+    border: #334155 2px solid;
+    border-radius: 999px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: small;
+    float:right;
+}
+#modal {
+    background-color: #465264;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+input {
+    margin-bottom: 20px;
+}
+fieldset {
+    border: 0;
 }
