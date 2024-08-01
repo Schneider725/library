@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Odin Project Library</h1>
+    </div>
+    <div class="buttons">
+        <div id="addBook">
+            <button>+ add book</button>
+        </div>
+        <div id="removeBook">
+            <button>- remove book</button>
+        </div>
+    </div>
+    <dialog class="modal" id="modal">
+        <fieldset>
+            <form>
+                <label for="author">author</label>
+                <input type="text" id="author" name="author">
+                <label for="title">title</label>
+                <input type="text" id="title" name="tite">
+                <label for="pages">pages</label>
+                <input type="number" id="pages" name="pages">
+            </form>
+        </fieldset>
+        <button id="close">close</button>
+        <button id="submit">submit</button>
+    </dialog>
+    <div id="books">
+        <div class="book">
+            <p>madeline miller</p>
+            <p>the song of achilles</p>
+            <p>400</p>
+        </div>
+        <div class="book">
+            <p>john steinbeck</p>
+            <p>east of eden</p>
+            <p>700</p>
+        </div>
+        <div class="book">
+            <p>donna tartt</p>
+            <p>the goldfinch</p>
+            <p>700</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
