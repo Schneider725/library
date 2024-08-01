@@ -145,3 +145,8 @@ input {
 fieldset {
     border: 0;
 }
+@media(max-width: 800px) {
+    #books {
+        grid-template-columns: 1fr;
+    }
+}
