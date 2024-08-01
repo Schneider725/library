@@ -29,9 +29,10 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   margin: 0;
-  padding: 20px;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #f0f2f5;
+  padding: 30px;
+  font-family: Roboto;
+  border: #cc530e 5px solid;
+  background-color: rgb(246, 238, 224);
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -76,6 +77,11 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto/Roboto-Medium.ttf);
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -83,26 +89,35 @@ form {
 #books {
     height: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 2rem;
 }
 #books > * {
     text-align: center;
-    background-color: #1e293b;
+    background-color: #27364d;
     border-radius: 10px;
     font-size: large;
     justify-content: center;
     color: white;
+    box-shadow: 7px 7px #cc530e;
+    transition: all ease 200ms;
+}
+#books > *:hover {
+    background-color: #cc530e;
+    box-shadow: 7px 7px #27364d;
+    transition: all ease 200ms;
 }
 .buttons {
     display: flex;
     justify-content: space-around;
 }
 h1 {
+    font-size: 60px;
     margin-bottom: 50px;
     color: #334155;
     text-align: center;
+    text-shadow: 2px 2px #cc530e;
 }
 button {
     background-color: #334155;
@@ -114,6 +129,10 @@ button {
     font-size: small;
     float:right;
 }
+button:hover {
+    cursor: pointer;
+}
+
 #modal {
     background-color: #465264;
     color: white;
