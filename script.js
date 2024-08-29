@@ -8,6 +8,15 @@ const title = document.getElementById("title");
 const pages = document.getElementById("pages");
 const removeBook = document.getElementById("removeBook");
 
+[author, title, pages].forEach((input) => {
+    input.addEventListener('keydown', (event) => {
+        if(event.key === 'Enter') {
+            event.preventDefault();
+            submitBook();
+        }
+    })
+})
+
 addBook.addEventListener("click", () => {
     modal.showModal();
 });
@@ -21,6 +30,9 @@ submit.addEventListener("click", submitBook);
 removeBook.addEventListener("click", deleteBook);
 
 function submitBook() {
+    if(author.checkValidity() === false  || title.checkValidity() === false || pages.checkValidity() == false){
+        return
+    }
     const newDiv = document.createElement("div");
     newDiv.setAttribute("class", "book");
     const pOne = document.createElement("p");
